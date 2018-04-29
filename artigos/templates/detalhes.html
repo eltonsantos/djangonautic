@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Detalhes{% endblock %}
+
+{% block conteudo %}
+    <div class="artigo-detalhe">
+        <div class="artigo">
+            <h2>{{ artigo.titulo }}</h2>
+            <p>{{ artigo.corpo }}</p>
+            <p>{{ artigo.data }}</p>
+        </div>
+    </div>
+{% endblock %}

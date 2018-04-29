@@ -1,12 +1,18 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Artigos</title>
-</head>
-<body>
-    Artigos
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block titulo %}Artigos{% endblock %}
+
+{% block conteudo %}
+    <h1>Artigos</h1>
+    <div class="artigos">
+    {% for artigo in artigos %}
+        <div class="artigo">
+            <h2>
+                <a href="{% url 'artigos:detalhes' slug=artigo.slug %}">{{ artigo.titulo }}</a>
+            </h2>
+            <p>{{ artigo.snippet }}</p>
+            <p>{{ artigo.data }}</p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
