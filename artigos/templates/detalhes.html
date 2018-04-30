@@ -5,6 +5,7 @@
 {% block conteudo %}
     <div class="artigo-detalhe">
         <div class="artigo">
+            <img src="{{ artigo.thumb.url }}" alt="{{ artigo.thumb }}">
             <h2>{{ artigo.titulo }}</h2>
             <p>{{ artigo.corpo }}</p>
             <p>{{ artigo.data }}</p>

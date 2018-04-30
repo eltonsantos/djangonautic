@@ -5,6 +5,7 @@ class Artigo(models.Model):
     slug = models.SlugField()
     corpo = models.TextField()
     data = models.DateTimeField(auto_now_add=True)
+    thumb = models.ImageField(default='default.png', blank=True)
 
     def __str__(self):
         return self.titulo

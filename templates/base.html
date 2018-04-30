@@ -11,8 +11,22 @@
 </head>
 <body>
 
+    <header class="wrapper">
+        <h1>
+            <a href="{% url 'artigos:artigos' %}">
+                Listar todos os artigos
+            </a>
+        </h1>
+
+        {% if user.is_authenticated %}
+            Olá {{ user.username }}!
+            <p><a href="#">Logout</a></p>
+        {% else %}
+            <p>Você não está logado</p><a href="#">Login</a>
+        {% endif %}
+    </header>
+
     <div class="wrapper">
-        <h1><a href="{% url 'artigos:artigos' %}">Listar todos os artigos</a></h1>
         {% block conteudo %}
         {% endblock %}
     </div>

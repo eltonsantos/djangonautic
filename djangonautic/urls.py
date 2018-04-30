@@ -18,10 +18,14 @@ from django.urls import path, include
 from django.contrib import admin
 from .views import sobre, home
 from artigos import urls as artigos_urls
+from contas import urls as contas_urls
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('sobre/', sobre),
     path('artigos/', include(artigos_urls)),
+    path('contas/', include(contas_urls)),
     path('', home),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

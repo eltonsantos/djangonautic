@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'artigos',
+    'contas',
 ]
 
 MIDDLEWARE = [
@@ -124,4 +125,10 @@ STATICFILES_DIRS = [
     'assets',
 ]
 
+MEDIA_URL = '/media/'
 
+MEDIA_ROOT = 'media'
+
+LOGIN_REDIRECT_URL = '/'
+
+LOGOUT_REDIRECT_URL = '/'
